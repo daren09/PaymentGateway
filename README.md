@@ -1,5 +1,5 @@
 # PaymentGateway
-Dependecies : AutoFac,Entity Framework <br />
+Dependecies : AutoFac,Entity Framework, SQL Server <br />
 Framework: 4.6.1
 
 How to use the project: <br />

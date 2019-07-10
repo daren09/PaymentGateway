@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "2a34118b-8c02-483c-8d52-35c910d153ab",
+		"name": "BankAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ProcessPayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{localBank}}/api/bank",
+					"host": [
+						"{{localBank}}"
+					],
+					"path": [
+						"api",
+						"bank"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d6bfb901-2616-4b66-83f6-bfac95c2be7c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0f86020a-af31-4db6-ae83-143c22fdca8d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "114eb1f6-013d-4a85-b7d3-67b61c4df9e1",
+			"key": "localbank",
+			"value": "http://localhost:2961/",
+			"type": "string"
+		}
+	]
+}

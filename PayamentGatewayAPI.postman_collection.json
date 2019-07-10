@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "0d552114-32be-46ec-ab49-092d2314bfca",
+		"name": "PayamentGatewayAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "daren@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Passowr@d459",
+							"type": "text"
+						},
+						{
+							"key": "ConfirmPassword",
+							"value": "Passowr@d459",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/api/Account/Register",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "daren@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Passowr@d459",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/token?grant_type=password&username=daren@gmail.com&password=Passowr@d459",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "daren@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "Passowr@d459"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CgHgL4kircG7LI1Y_HbLeRrc4zc5aUgSGzhEaJraZuYh9YCazGu302RQuHAUpZOj6HVETKHvXL_L2_M6tvNqFxL2bFmLs4qMR4ZuhiIEssYyOHZKkGxaksmgI3yeOwATa7syyUa87BXqqfccKnahm4djn3qOXWDs5AdXBQwBBZLUUikQ0SavF-yMussuq_2lk937nGxlGQU_pjPEVsPnYbPQuyVNnDSRyTrDiBRW1iz6vXWNb-3PXYShMOSswIpy2THF-6fBzmptThONycWwQLzRiDafNYkFgDngQkz2l1fd38v0q89N3R6StnnBo7temQBXTPO-irbZJnC54kyirLKdBGM4DEibum4JBTEN5KsRHC9J8wW6UWJ9Mflg2ESpiN9lN1y8Za1lufomrpz1otaSkuidzGN2-0DfKzlVdGCP9zis1k8fhvWVDdMPLOHQJu1QACNisweTQcQak4pVBfx-9VIqMVqYwimjR7yvmfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CardHolderName",
+							"value": "Daren",
+							"type": "text"
+						},
+						{
+							"key": "CardNumber",
+							"value": "1455688994414256",
+							"type": "text"
+						},
+						{
+							"key": "Amount",
+							"value": "889",
+							"type": "text"
+						},
+						{
+							"key": "Currency",
+							"value": "MUR",
+							"type": "text"
+						},
+						{
+							"key": "Cvv",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "CardExpDate",
+							"value": "12/20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/api/Payment",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"Payment"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8WIeRWKIVO-KCvYxft35jfmeCrAI0tQwopB3QjC-zQjinBUd4w3lAnmevZq4PHI_JFDSySybXM8Ja4XIAqJLH6ymJFwa0LQ2vOcuUWsxXB2qi1c468hInG4iJJvEILb4E_5a1lwjiUVA3mHaVdCDzCSek1DzU8x7h8bYLym3tHrGqy0DV0eP2HX3PUWtCD4oMDKOYg4o4R1UpdxWAmEMiGVPPe7vbQFcxshjQbEgAcclcf_skaCFqaQXyuBYH0pZrXqNFgmVsm-xqkNdQnhhGlL1zdA5v1_PlaPF-SKppy9YLAEZ4iqyQrAUU0xS5DIc62GobCSd9k0SWSU57ylPdlxR-mbkQRtuK119BWp8p_jWYxaTCsUloKj2tIstpfvXYQ0QMY78nSTCvWjXSCSOZjcjZFXAM13Tk1SHNH5mnWw4spbOYK_ctuIxUS5lm5RPRxZXql8TxefhE0EG4HSS4YnAwxqYSMVyJ5Nnt3rnY7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/Payment/2",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"Payment",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CgHgL4kircG7LI1Y_HbLeRrc4zc5aUgSGzhEaJraZuYh9YCazGu302RQuHAUpZOj6HVETKHvXL_L2_M6tvNqFxL2bFmLs4qMR4ZuhiIEssYyOHZKkGxaksmgI3yeOwATa7syyUa87BXqqfccKnahm4djn3qOXWDs5AdXBQwBBZLUUikQ0SavF-yMussuq_2lk937nGxlGQU_pjPEVsPnYbPQuyVNnDSRyTrDiBRW1iz6vXWNb-3PXYShMOSswIpy2THF-6fBzmptThONycWwQLzRiDafNYkFgDngQkz2l1fd38v0q89N3R6StnnBo7temQBXTPO-irbZJnC54kyirLKdBGM4DEibum4JBTEN5KsRHC9J8wW6UWJ9Mflg2ESpiN9lN1y8Za1lufomrpz1otaSkuidzGN2-0DfKzlVdGCP9zis1k8fhvWVDdMPLOHQJu1QACNisweTQcQak4pVBfx-9VIqMVqYwimjR7yvmfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{local}}/api/Account/UserInfo",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"UserInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "qyPpqLICGLLqBxWYiPA1-i8sCRXt05czTGPXiTuobP7UBFylT5gEd4GVFV4xKyj6m6wmUn8965J77y_ES3Em7ANnv9irNcV0U_qXYwHIDfYy67F-5Ol8aV1uWR1vK66p_9yHkhbx8GuAycXpV30eJyxsAUByLdxqSeDP0dNg4NotCGQemNRZDP7LtuGMGNgidUdh_dgc8atBvu0hDlzuvCNvBT3eGXKCGjEJRpFFairHPOIwNflMyoS9ZJIaQHzNSyTLNDsVYa6552Rh5yx1cdbSPLi1vXK6ZzhJzlY0ccU351m0GJb23ekxuWfQDWC8Dcnt1DqcZ7NrjuwG210uJPyzMULq1T_iLbLkKk9dcRIfs2Ff97Guz-pIW4OKSTLXiJHDSV9CdLVJp0dNNKokP0anOfGg2PN8qmbLHzIFQ-eN-k1Y9waEJPkHd24kVJATnu6hXfx_AYFU8xoNC_4eSAkuQ0qEX0Yc1Bgwd4TSGA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/Account/Logout",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"Logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "409ade6b-6700-4e38-b63a-bd14003b1018",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "39c46de0-52aa-4631-8736-35bf49d72d97",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "7f33d869-882b-4a23-8530-a6139a4496d6",
+			"key": "local",
+			"value": "http://localhost:44821/",
+			"type": "string"
+		}
+	]
+}
